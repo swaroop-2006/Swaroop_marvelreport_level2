@@ -1,0 +1,142 @@
+# Swaroop's CLCY Level-003 Course work
+
+# Level-3 Final Report
+
+## Task 1: AWS Lambda
+
+AWS Lambda 
+
+## Task 3 : SSH
+
+ssH  is a newtwork protocol wher we can get access to a remote system just by using keys here ther are mainly two systems client and the server the client can access the remote server with the help of keys present in local storege here client has two keys private and publickey and server has public key now the client share the publickey and the server cheks the key and sends an encrypted file which is decrypted by using the private key pressent in the local system which sends back the result in encrypted form to the server now server checks the file and gives the connection.
+
+difficulty i have faced in the task 
+<div>
+1.i was using 2 vm's here kali and ubantu one of which was in nat and other was in bridged adapter so they couden't connet so i replace  the system which was attached to nat to bridge adapter i used ping command to check if the system is reachable 
+<div>
+The command i used in the whole task
+command for both server and client
+sudo apt update
+<div>
+command for server
+sudo apt install openssh-server
+sudo systemctl status ssh
+sudo systemctl start ssh
+sudo systemctl enable ssh
+ip addr
+<div>
+command for client 
+
+ssh keygen -t ed25519
+
+ssh-copy-id -i ~/.ssh/id_ed25519.pub username_ofserver@host_ipaddress
+
+ping server_ipadress
+
+ssh -i ~/.ssh/mykey  user_is@host_ipaddress
+
+after gaingig the remote access of the server 
+
+i checked all the directories using ls command then created a directiry marvelclcytask using mkdir command the created a file in it using touch command then i verified them all by entering into kali linux and checking the directory. 
+
+attachements 
+
+## Task 5 : Wireshark
+
+Wireshark is a opensource network-packet analyzer which monitors the flow of packets in a network cable (i dosen't add or altet the flow of any packet).
+
+first lecture i learnt about thes points
+1.How can i seperate tcp sky protocol from others by using different colour
+
+2.Changing the layout of  the wireshark in propeties option  
+
+3.Adding  colum and naming it delta
+
+4.Checking the network diagram 
+
+5.Increasing the size of user interface
+
+second lecture i learnt about 
+
+1.How can i manage interfaces in wireshark
+
+2.Storing the output in pcapng file (i limited the storage of the file to 500mb)
+
+3.learnt about ring buffer(limit of how many files it can create)
+
+third lecture on wireshark 
+
+1.I learnt about how to add wireshark to the path
+
+2.learnt about how can we access wire shark from command line interface
+
+3.learnt about commands like       
+     dumcap -h for help
+     dumcap -i for interfaces
+     dumcap -w for giving the location to the file in wich it stores the interface data
+     dumcap -b for ring buffer
+    -b filesize -b files
+
+4th lecture i learnt about
+
+1.where to install wireshark in ideal case  (near tap or span)
+
+2.what is vtap and vspan (what is tap and span)
+
+3.we download wireshark to analyze traffic 
+
+in the fifth lecture i learnt about 
+
+1.what is and how to create capture filter?
+
+2.what and how to create display filter
+ip.adress eq,not (),tcp.port in {,,},right click filtering,frame contains or matches string.
+
+basicaly this lecture was based on filtaring data
+
+lecture 6 
+ 
+ i learnt about name resolution
+ 2.changed the ip adress of the sourse to a name called sourse
+ 3.reloded the file in different format
+
+ lecture 7
+
+ it was about time 
+ 1.You can add time and date in time colum
+ 2.if you want to make a packet reference to know time taken by other packets to do that can be seen here
+ 3.how to unset all time refrence by using edit
+
+ lecture 8
+
+1.hear learnt about how can we read pcaps with wireshark
+
+2.using statirstics in wireshark
+
+3.should watch newer video so that i can get trace file.
+
+lecturen 9 
+
+1.It was about how to extract files from pcaps (unencrypeted one)
+
+## Task 9 : Hashing 
+
+Hashing is a process of storing password in the form of hashes which is uni directional means whcich can't be decrypted .so how can we verify? the alogrithem convert the password into hashes and compares it with uses password which is converted in hashes if they match then login is succesful or else it fails .It uses cryptographic functions like MD5 and SHA1 ,it protects the password from hackers (even if they have access to database).Even this method is not 100% secure but it slow down the hacker (he need to spend more money and time).
+
+here is the program on hashing by using hashlib 
+
+## Task 2 : Jenkins
+
+jenkins is a open-source automation server which is used for  ci/cd pipeline .
+CI-continous intigration (when organization is workin on a large project the every one merge their code to their designated branch without any conflict which can be done by CI)
+CD - all the code after succesfully merging into the main branch it is ready for deployment so the new as new versions come for the product it should be deliverd to end customers which can be done by CD.
+
+Stages in my pipeling
+checkout
+build 
+test
+
+in this task i used jenkins to chekout ,build and test static webpage . Initially i created a Jenkinfile which contain the script of the pipeline in the same folder as webpage.Then i built an image of jenkins and ran the jenkins container using the command docker run -d --name jenkins -p 8080:8080 -p 50000:50000 jenkins/jenkins:lts here "-d" is for detaching jenkins (to make it run in background) . i enterd the adminstrator password and filled the credentials then i created job clicked on pipelines then selected and selected defination as pipeline script from scm,scm as git ,pased the url of my repository in repository url,branch specifier as /main as i am working in this branch finally script path as jenkinsfile.
+
+after ran the job and it was successful 
+
