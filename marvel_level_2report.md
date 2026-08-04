@@ -210,3 +210,21 @@ Deletes all infrastructure resources managed by the current Terraform configurat
 <a href="https://ibb.co/fGBjcqCC"><img src="https://i.ibb.co/Pz3qSF55/Screenshot-55.png" alt="Screenshot-55" border="0"></a>
 
 <a href="https://ibb.co/XkdzzkG2"><img src="https://i.ibb.co/NnkLLnGV/Screenshot-56.png" alt="Screenshot-56" border="0"></a>
+
+## Task 6 : Docker 
+
+Docker is a software framework  which is used to building ,running  and manage containers on the servers or cloud 
+
+Docker image is a lightweight ,standalone exicutable packge of software which includes every thing needed to run an application:
+
+Docker container is a standard unit of software which contains code ,dependencies and required libraryes all wrapped in one so that it can work quickly and relably in different environment
+
+The commands i used in this task:
+1.docker build -t my-website .
+2.docker images 
+3.docker rmi image-id
+4.docker run -d -p 8089:80 my-website 
+5.docker ps -a 
+6.docker rm containerid or name
+7.docker start containder id or name
+
