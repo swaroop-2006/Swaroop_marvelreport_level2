@@ -2,9 +2,6 @@
 
 # Level-3 Final Report
 
-## Task 1: AWS Lambda
-
-AWS Lambda 
 
 ## Task 3 : SSH
 
@@ -40,84 +37,74 @@ after gaining the remote access of the server
 i checked all the directories using ls command then created a directiry marvelclcytask using mkdir command the created a file in it using touch command then i verified them all by entering into kali linux and checking the directory. 
 
 attachements 
+<a href="https://ibb.co/MDnmBWLx"><img src="https://i.ibb.co/Gv7qHBj4/IMG-20260716-121754.jpg" alt="IMG-20260716-121754" border="0"></a>
+<a href="https://ibb.co/GfjfKCV3"><img src="https://i.ibb.co/RGWGxQC4/IMG-20260716-121813.jpg" alt="IMG-20260716-121813" border="0"></a>
+<a href="https://ibb.co/HLXBRBpT"><img src="https://i.ibb.co/V03JbJpY/IMG-20260716-121831.jpg" alt="IMG-20260716-121831" border="0"></a>
 
 ## Task 5 : Wireshark
 
-Wireshark is a opensource network-packet analyzer which monitors the flow of packets in a network cable (i dosen't add or altet the flow of any packet).
+# Wireshark – Lecture Summary
 
-first lecture i learnt about thes points
-1.How can i seperate tcp sky protocol from others by using different colour
+Wireshark is an open-source network packet analyzer used to capture and analyze network traffic. It only monitors packets and does not alter their flow.
 
-2.Changing the layout of  the wireshark in propeties option  
+### Lecture 1 – Wireshark Basics
 
-3.Adding  colum and naming it delta
+* Applied **coloring rules** to identify TCP/Sky protocol packets separately.
+* Changed Wireshark's **interface layout** through Preferences.
+* Added and named a custom **Delta** column to analyze packet timing.
+* Checked the **network diagram**.
+* Increased the **user-interface size** for better visibility.
 
-4.Checking the network diagram 
+### Lecture 2 – Interfaces & Packet Storage
 
-5.Increasing the size of user interface
+* Learned how to **manage network interfaces**.
+* Saved captured traffic in **PCAPNG** format.
+* Limited capture storage to **500 MB**.
+* Learned about **ring buffers**, which allow captured data to be distributed across multiple files.
 
-second lecture i learnt about 
+### Lecture 3 – Wireshark CLI
 
-1.How can i manage interfaces in wireshark
+* Added Wireshark tools to the **system PATH**.
+* Accessed Wireshark capture tools through the **Command Line Interface**.
+* Learned `dumpcap` commands:
 
-2.Storing the output in pcapng file (i limited the storage of the file to 500mb)
+  * `dumpcap -h` – Display help.
+  * `dumpcap -i` – List interfaces.
+  * `dumpcap -w` – Specify the output file.
+  * `dumpcap -b` – Configure a ring buffer.
+  * `-b filesize` and `-b files` – Set file size and number of files.
 
-3.learnt about ring buffer(limit of how many files it can create)
+### Lecture 4 – Network Monitoring
 
-third lecture on wireshark 
 
-1.I learnt about how to add wireshark to the path
+* Understood that Wireshark is used to **capture and analyze network traffic**.
 
-2.learnt about how can we access wire shark from command line interface
+### Lecture 5 – Filtering
 
-3.learnt about commands like       
-     dumcap -h for help
-     dumcap -i for interfaces
-     dumcap -w for giving the location to the file in wich it stores the interface data
-     dumcap -b for ring buffer
-    -b filesize -b files
+Learned the difference between:
 
-4th lecture i learnt about
+* **Capture filters** – Filter packets while capturing.
+* **Display filters** – Filter already captured packets.
 
-1.where to install wireshark in ideal case  (near tap or span)
+Examples: `ip.addr`, `tcp.port`, `frame contains`, `matches`, `in`, and `not`. Filters can also be applied by right-clicking a packet.
 
-2.what is vtap and vspan (what is tap and span)
+### Lecture 6 – Name Resolution
 
-3.we download wireshark to analyze traffic 
+* Learned **name resolution**.
+* Converted IP addresses into readable names.
+* Reloaded packet captures using different formats/options.
 
-in the fifth lecture i learnt about 
+### Lecture 7 – Time Analysis
 
-1.what is and how to create capture filter?
+* Added **time and date** information to packet columns.
+* Used **time references** to measure how long operations took between packets.
+* Learned how to remove/unset time references.
 
-2.what and how to create display filter
-ip.adress eq,not (),tcp.port in {,,},right click filtering,frame contains or matches string.
 
-basicaly this lecture was based on filtaring data
+### Lecture 8 – File Extraction
 
-lecture 6 
- 
- i learnt about name resolution
- 2.changed the ip adress of the sourse to a name called sourse
- 3.reloded the file in different format
+* Learned how to **extract files from unencrypted PCAP captures**.
 
- lecture 7
-
- it was about time 
- 1.You can add time and date in time colum
- 2.if you want to make a packet reference to know time taken by other packets to do that can be seen here
- 3.how to unset all time refrence by using edit
-
- lecture 8
-
-1.hear learnt about how can we read pcaps with wireshark
-
-2.using statirstics in wireshark
-
-3.should watch newer video so that i can get trace file.
-
-lecturen 9 
-
-1.It was about how to extract files from pcaps (unencrypeted one)
 
 <a href="https://ibb.co/S4Yp0QXB"><img src="https://i.ibb.co/rR8JMbGH/Screenshot-43.png" alt="Screenshot-43" border="0"></a>
 
@@ -228,3 +215,61 @@ The commands i used in this task:
 6.docker rm containerid or name
 7.docker start containder id or name
 
+## Task 8 :Web Scraping and automation (flight ticket price analysis)
+
+Web Scraping is a technique that helps in process of extracting data or content from websites using various libraries of python. Throughout the task, the errors were challenging and learning steps like real flight websites failed due to modern SPA design, controlled inputs, and anti-bot mechanisms also issues included city values not storing, search not triggering, wrong data extraction, slow loading, and ChromeDriver misconfiguration but these were solved by inspecting the DOM, fixing ChromeDriver setup, and refining element selectors thus a Selenium-friendly demo site was used to ensure reliable automation and dynamic scraping and learnt the importance of proper environment setup, DOM analysis, and choosing suitable websites for automation tasks.
+
+<a href="https://ibb.co/4nLkjTJC"><img src="https://i.ibb.co/NdqRLj7f/Screenshot-20261004-134531.jpg" alt="Screenshot-20261004-134531" border="0"></a><br /><a target='_blank' href='https://dedupelist.com/'>dedupe subscriber list online</a><br />
+
+## Task 1 :AWS LAMBDA
+
+AWS Lambda is a serverless compute service that runs code in response to events without requiring you to manage servers. In this task I deployed an anonymous ID-based messenger using a single Python Lambda function exposed through a Function URL. The function serves the web page and handles sending and receiving messages, storing them in a DynamoDB table with a TTL so they auto-delete after 24 hours. I configured the handler, an environment variable, and an IAM policy giving the function least-privilege access to the table. This showed how Lambda removes the need to provision or scale servers.
+
+## Task 7: Dockerize ( without using yaml file )
+
+In this task, I containerized my task manager web application, which has an HTML/CSS/JS frontend, a Node.js and Express backend, and a MySQL database. I wrote a Dockerfile for the backend that uses the node:20-alpine base image, sets the working directory, installs dependencies with npm install, copies the application code, exposes port 3000, and starts the server with node server.js. I built this into a custom image using the docker build command. A separate frontend Dockerfile was not needed because the Express backend serves the frontend files. For the database, I pulled the official mysql:8.0 image. I then created a custom bridge network named task-net and a named volume called task-db-data. I ran both containers using only Docker CLI commands, without docker-compose or YAML files. The database container was attached to the network and the volume, which is mounted at /var/lib/mysql, and the backend container joined the same network, with port 3000 published to the host. The backend connected to the database by its container name, using environment variables for the host, user and password. I verified the setup by using the application in the browser, querying the data inside the database container, and inspecting the network and volume. I also deleted and recreated the database container to confirm that the data persisted. This task helped me understand Dockerfiles, images, containers, networking, environment variables and the importance of volumes for persistent storage.
+
+DOCKER COMMANDS USED IN THE TASK
+
+1. Build the backend image
+docker build -t task-backend .
+
+2. Pull the database image
+docker pull mysql:8.0
+
+3. Create the network and volume
+docker network create task-net
+docker volume create task-db-data
+
+4. Run the database container
+docker run -d --name task-db `
+  --network task-net `
+  -v task-db-data:/var/lib/mysql `
+  -v "${PWD}\schema.sql:/docker-entrypoint-initdb.d/schema.sql" `
+  -e MYSQL_ROOT_PASSWORD=Task12345 `
+  mysql:8.0
+
+5. Run the backend container
+docker run -d --name task-backend `
+  --network task-net -p 3000:3000 `
+  -e DB_HOST=task-db -e DB_USER=root -e DB_PASSWORD=Task12345 -e DB_NAME=taskdb `
+  task-backend
+
+Open http://localhost:3000
+
+6. Check the data in the database
+docker exec -it task-db mysql -uroot -pTask12345 taskdb
+SHOW TABLES;
+SELECT * FROM tasks;
+exit
+
+7. Start, stop and clean up
+docker start task-db task-backend
+docker stop task-backend task-db
+docker rm -f task-backend task-db
+docker network rm task-net
+docker volume rm task-db-data
+
+## TASK 10:N-MAP
+
+NMap or the Network Mapper scans networks to find live hosts, open ports, running services and operating systems, helping us map networks, find vulnerabilities, and manage services by sending specially crafted packets and analyzing responses. We did various analysis with NMap which includes identifying open ports and running services on a system, detecting the operating system using network behavior and etc. The Nmap aggressive scan that was taken identified multiple open ports associated with Windows system services and local web applications. Ports 135 and 445 indicate Windows RPC and SMB services, while ports 8080 and 9001 indicate HTTP-based services including a Jetty web server. OS detection successfully identified the host as Microsoft Windows 10. The scan results were saved and analyzed to assess potential security exposure.
